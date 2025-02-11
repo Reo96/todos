@@ -1,4 +1,5 @@
 import React from 'react'
+import {toast} from 'react-hot-toast'
 import {useNavigate} from 'react-router-dom'
 
 export default function List({hide}) {
@@ -6,10 +7,12 @@ export default function List({hide}) {
     const logout = () =>{
         localStorage.removeItem('user');
         nav('/login');
+        toast.success("Logged Out Successfully")
     }
     const clearAll = () =>{
         localStorage.clear();
         nav('/login');
+        toast.success("Everything Deleted Successfully")
     }
   return (
     <>
